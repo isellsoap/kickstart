@@ -1,0 +1,959 @@
+@charset "utf-8";
+
+/*
+** General settings
+** ###########################################################################
+**/
+
+/*
+** 1. This gives you the box model you want. Trust me.
+**    @see: http://paulirish.com/2012/box-sizing-border-box-ftw/
+**/
+
+* {
+
+	/* 1 */
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
+	margin: 0;
+	padding: 0;
+}
+
+/*
+** Corrects block display of HTML5 elements not defined in some browsers.
+** @see: http://dev.opera.com/articles/view/new-structural-elements-in-html5/#older-browsers
+**/
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+	display: block;
+}
+
+/*
+** Corrects inline-block display not defined in some browsers.
+**/
+
+audio,
+canvas,
+video {
+	display: inline-block;
+}
+
+/*
+** Prevents modern browsers from displaying “audio” without controls and
+** removes excessive height in iOS 5 devices.
+**/
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+/*
+** Addresses styling for “hidden” attribute not present in some browsers.
+**/
+
+[hidden] {
+	display: none;
+}
+
+/*
+** Basic color and font settings
+** ###########################################################################
+**/
+
+/*
+** 1. Firefox doesn’t inherit font family specified for “select”.
+**    @see: https://github.com/nathansmith/formalize/issues/41
+** 2. Set default text color to be slightly lighter than pure black to avoid
+**    excessive contrast.
+**/
+
+html,
+button,
+input,
+select,
+
+/* 1 */
+optgroup,
+
+textarea {
+
+	/* 2 */
+	color: #333;
+
+	font: 100%/1.5 "Open Sans", "Neue Helvetica", Helvetica, Arial, sans-serif;
+}
+
+/*
+** 1. Hyphenation works!
+**    @see: http://www.quirksmode.org/blog/archives/2012/11/hyphenation_wor.html
+** 2. Prevents iOS and IE mobile text size adjust after orientation change,
+**    without disabling user zoom.
+**    @see: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+**/
+
+html {
+	background: #fff;
+
+	/* 1 */
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+
+	/* 2 */
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+
+}
+
+/*
+** Vertical rythm
+**/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+address,
+blockquote,
+p,
+pre,
+figure,
+table,
+form,
+fieldset {
+	margin-bottom: 1.5rem;
+}
+
+/*
+** Headings
+** ###########################################################################
+**/
+
+/*
+** 1. @see: http://elliotjaystocks.com/blog/the-fine-flourish-of-the-ligature/
+** 2. Cross-browser kerning-pairs and ligatures. Browsers still need this.
+**    @see: http://aestheticallyloyal.com/public/optimize-legibility/
+**/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	/* 1 */
+	-moz-font-feature-settings: "kern", "liga", "dlig";
+	-ms-font-feature-settings: "kern", "liga", "dlig";
+	-o-font-feature-settings: "kern", "liga", "dlig";
+	-webkit-font-feature-settings: "kern", "liga", "dlig";
+	font-feature-settings: "kern", "liga", "dlig";
+
+	font-weight: 700;
+	line-height: 1.25;
+
+	/* 2 */
+	text-rendering: optimizeLegibility;
+
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+h5 {
+	font-size: 1.125em;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+/*
+** Links
+** ###########################################################################
+**/
+
+a {
+	color: #bd0000;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #85200d;
+}
+
+a:focus,
+a:hover {
+	text-decoration: none;
+}
+
+/*
+** Improves consistency between Chrome and other browsers.
+**/
+
+a:focus {
+	outline: thin dotted;
+}
+
+/*
+** Improves readability when focused and also mouse hovered in all browsers.
+** The outline is shown only if the link gains keyboard focus.
+** @see: people.opera.com/patrickl/experiments/keyboard/test
+**/
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+/*
+** Lists
+** ###########################################################################
+**/
+
+ul,
+ol,
+dd {
+	margin-left: 2em;
+}
+
+ul,
+ol {
+	list-style-position: outside;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+/*
+** This should cover all nested lists possibilities.
+** @see: https://github.com/hakimel/reveal.js/pull/53
+**/
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+	margin-bottom: 0;
+}
+
+ul ul {
+	list-style-type: circle;
+}
+
+ol ol {
+	list-style-type: lower-latin;
+}
+
+dt {
+	font-weight: 700;
+	margin-bottom: .25em;
+}
+
+dd {
+	margin-bottom: 1em;
+}
+
+/*
+** Text-level formatting
+** ###########################################################################
+**/
+
+/*
+** Some elements shouldn’t be hyphenated.
+** @see: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation/
+**/
+
+abbr,
+blockquote,
+code,
+kbd,
+q,
+var {
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	-o-hyphens: none;
+	-webkit-hyphens: none;
+	hyphens: none;
+}
+
+/*
+** Addresses styling not present in some browsers. By not specifying a border
+** color it defaults to the text color it inherits.
+**/
+
+abbr[title],
+dfn[title] {
+	border-bottom: 1px dotted;
+	cursor: help;
+}
+
+/*
+** 1. Addresses styling not present in some browsers.
+**/
+
+address,
+blockquote,
+cite,
+
+/* 1 */
+dfn,
+
+em,
+i,
+q,
+var {
+	font-style: italic;
+}
+
+/*
+** Addresses style set to “bolder” in some browsers.
+**/
+
+b,
+strong {
+	font-weight: 700;
+}
+
+blockquote,
+code,
+ins,
+kbd,
+mark,
+pre,
+samp,
+var {
+	color: #222;
+}
+
+blockquote {
+	font-size: 1.125em;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+:not(pre) > code,
+:not(kbd) > kbd,
+mark,
+pre,
+samp,
+var {
+	border-radius: .25em;
+	padding: .1em .25em;
+}
+
+/*
+** 1. Fixes monospace font bugs in some browsers.
+**    @see: http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+**/
+
+code,
+kbd,
+pre,
+samp,
+var {
+	background: #f5f2f0;
+
+	/* 1 */
+	font: 1em Consolas, Monaco, "Andale Mono", monospace, serif;
+
+	text-shadow: 0 1px #fff;
+}
+
+del,
+s {
+	color: #888;
+	text-decoration: line-through;
+}
+
+/*
+** Make lined through text readable on hover.
+**/
+
+del:hover,
+s:hover {
+	text-decoration: none;
+}
+
+/*
+** Avoids visible outlines in WebKit browsers.
+**/
+
+div,
+div:target {
+	outline: 0;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	display: block;
+	height: 1px;
+	margin: 2em 0;
+}
+
+ins,
+u {
+	text-decoration: none;
+}
+
+ins {
+	border-bottom: 1px dotted #47ad09;
+}
+
+/*
+** Addresses styling not present in some browsers.
+**/
+
+mark {
+	background: #ffa;
+}
+
+/*
+** 1. Improves readability of pre-formatted text in all browsers.
+**    @see: http://toscho.de/2012/css-tab-size/
+**/
+
+pre {
+	overflow: auto;
+	padding: .75em 1em;
+
+	/* 1 */
+	-moz-tab-size: 4;
+	-ms-tab-size: 4;
+	-o-tab-size: 4;
+	-webkit-tab-size: 4;
+	tab-size: 4;
+
+}
+
+/*
+** Quotation marks are highly language specific.
+** @see: http://meiert.com/en/blog/20090603/punctuation-cheat-sheet/
+**/
+
+q {
+	quotes: "»" "«" "›" "‹";
+}
+
+q::before {
+	content: open-quote;
+}
+
+q::after {
+	content: close-quote;
+}
+
+small,
+sub,
+sup {
+	font-size: .75em;
+}
+
+/*
+** Prevents sub and sup affecting line-height.
+** @see: gist.github.com/413930
+**/
+
+sub,
+sup {
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+sup {
+	top: -.5em;
+}
+
+/*
+** Embedded content
+** ###########################################################################
+**/
+
+/*
+** 1. Removing the border prevents a border from appearing around images
+**    wrapped in links in some browsers.
+** 2. Neat trick for flexible images.
+**    @see: http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries
+** 3. Removes the gap between images and borders on image containers.
+**    @see: https://github.com/h5bp/html5-boilerplate/issues/440;
+**/
+
+img {
+
+	/* 1 */
+	border: 0;
+
+	/* 2 */
+	height: auto;
+	max-width: 100%;
+
+	/* 3 */
+	vertical-align: middle;
+
+}
+
+/*
+** Corrects overflow not hidden in IE 9.
+**/
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+/*
+** Tables
+** ###########################################################################
+**/
+
+table,
+th,
+td {
+	border-style: solid;
+}
+
+table,
+tbody th,
+tbody td {
+	border-color: #ccc;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-width: 1px 0;
+	width: 100%;
+}
+
+/* Exact same styles, no need for duplicating */
+
+caption,
+figcaption {
+	caption-side: bottom;
+	color: #888;
+	font-size: .875em;
+	padding: .5em 0;
+	text-align: center;
+}
+
+th,
+td {
+	padding: .5em .75em;
+	text-align: left;
+	vertical-align: top;
+}
+
+th {
+	font-weight: 700;
+}
+
+thead th,
+tfoot th {
+	border-color: #666;
+}
+
+thead th {
+	border-width: 0 0 2px;
+}
+
+tfoot th {
+	border-width: 2px 0 0;
+}
+
+tbody th,
+tbody td {
+	border-width: 0 0 1px;
+}
+
+tbody th {
+	background: #f0f0f0;
+}
+
+tbody tr:nth-child(odd) td {
+	background: #f9f9f9;
+}
+
+tbody tr:hover th {
+	background: #ffd8d8;
+}
+
+tbody tr:hover td {
+	background: #ffe8e8;
+}
+
+/*
+** Forms
+** ###########################################################################
+**/
+
+fieldset {
+	border: 1px solid #ccc;
+	padding: 1em;
+}
+
+/*
+** 1. Corrects color not being inherited in IE 9. Without this, legend text
+**    will always be blue in IE.
+**/
+
+legend {
+
+	/* 1 */
+	border: 0;
+
+	color: #888;
+	padding: 0 .5em;
+}
+
+/*
+** 1. WebKit browsers use “pointer” only when “size” attribute with value 0 or
+**    1 is present.
+**/
+
+label,
+
+/* 1 */
+select,
+
+input[type="checkbox"],
+input[type="radio"],
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+}
+
+/*
+** 1. @see: https://github.com/nathansmith/formalize/issues/43
+** 2. Firefox sets line height using “!important” in the UA style sheet.
+**/
+
+textarea,
+
+/* 1 */
+select,
+
+input,
+button {
+
+	/* 2 */
+	line-height: normal;
+
+	vertical-align: top;
+}
+
+textarea,
+select,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-moz-background-clip: padding;
+	-ms-background-clip: padding-box;
+	-o-background-clip: padding-box;
+	-webkit-background-clip: padding;
+	background-clip: padding-box;
+	border: 1px solid;
+	height: 1.8em;
+	outline: 0;
+	padding: 0 .1875em;
+}
+
+textarea:focus,
+select:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+	background-color: #fff;
+	border-color: #0068c4;
+	box-shadow: #0068c4 0 0 .5em 0;
+	outline: 0;
+	z-index: 1;
+}
+
+textarea,
+select,
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"] {
+	background-color: #fff;
+	border-color: #999 #bbb #ddd;
+}
+
+/*
+ * Check boxes and radio buttons
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+	position: relative;
+	vertical-align: bottom;
+}
+
+input[type="checkbox"] {
+	margin: 2px 1px;
+	top: -.1875em;
+}
+
+input[type="radio"] {
+	margin: 1px;
+	top: -.375em;
+}
+
+/*
+ * Firefox
+ */
+
+@-moz-document url-prefix() {
+
+	input[type="radio"] {
+		top: -.1875em;
+	}
+
+}
+
+/*
+** WebKit specific stuff.
+**/
+
+@media (-webkit-min-device-pixel-ratio: 0) {
+
+	input[type="radio"] {
+		top: -.25em;
+	}
+
+}
+
+/* Buttons */
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background: #ddd;
+	background-image: -moz-linear-gradient(#fff, #e5e5e5);
+	background-image: -ms-linear-gradient(#fff, #e5e5e5);
+	background-image: -o-linear-gradient(#fff, #e5e5e5);
+	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
+	background-image: linear-gradient(#fff, #e5e5e5);
+	border-color: #ddd #bbb #999;
+	display: inline-block;
+	font-weight: 700;
+	overflow: visible;
+	padding: 0 .5em;
+	text-shadow: #fff 0 1px 1px;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background-image: -moz-linear-gradient(#fff, #d9d9d9);
+	background-image: -ms-linear-gradient(#fff, #d9d9d9);
+	background-image: -o-linear-gradient(#fff, #d9d9d9);
+	background-image: -webkit-linear-gradient(#fff, #d9d9d9);
+	background-image: linear-gradient(#fff, #d9d9d9);
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background-image: -moz-linear-gradient(#d9d9d9, #fff);
+	background-image: -ms-linear-gradient(#d9d9d9, #fff);
+	background-image: -o-linear-gradient(#d9d9d9, #fff);
+	background-image: -webkit-linear-gradient(#d9d9d9, #fff);
+	background-image: linear-gradient(#d9d9d9, #fff);
+	border-color: #999 #bbb #ddd;
+	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
+}
+
+/*
+** Removes inner padding and border from Firefox.
+**/
+
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+/*
+** Addresses appearance set to “searchfield”, without removing the benefits of
+** search inputs (e.g. showing past searches).
+**/
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+/*
+** Remove excess inner padding that appears once the search input appearance
+** has been changed to “textfield”.
+**/
+
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/*
+** Re-set default cursor for disabled elements.
+**/
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+/*
+** 1. Remove default vertical scrollbar in some browsers.
+** 2. Allow only vertical resizing to prevent instances when trying to resize
+**    a textarea accidentally results in it being resized horizontally over
+**    adjacent content.
+**/
+
+textarea {
+	min-height: 5em;
+
+	/* 1 */
+	overflow: auto;
+
+	/* 2 */
+	resize: vertical;
+
+	width: 100%;
+}
+
+select[multiple],
+select[size] {
+	height: auto;
+}
+
+/* https://github.com/nathansmith/formalize/issues/42 */
+/* 1. opera */
+
+select[size='0'],
+select[size='1'] {
+	height: 1.8em;
+	/* 1 */
+	padding: 0;
+}
+
+/*
+** Only Firefox understands this. Result: Opera and IE have italic font style,
+** WebKit and Firefox normal font style.
+**/
+
+optgroup {
+	font-style: normal;
+	font-weight: 700;
+}
+
+option {
+	padding-left: 1em;
+}
+
+/*
+** Useful classes
+** ###########################################################################
+**/
+
+/*
+** Clearfix
+**/
+
+.cf::before,
+.cf::after {
+	content: " ";
+	display: table;
+}
+
+.cf::after {
+	clear: both;
+}
+
+/*
+** Image replacement
+**/
+
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+}
+
+.ir::before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 150%;
+}
