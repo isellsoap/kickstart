@@ -327,27 +327,16 @@ dfn[title] {
 	cursor: help;
 }
 
-/*
-** 1. Addresses styling not present in some browsers.
-**/
-
 address,
 blockquote,
 cite,
-
-/* 1 */
 dfn,
-
 em,
 i,
 q,
 var {
 	font-style: italic;
 }
-
-/*
-** Addresses style set to “bolder” in some browsers.
-**/
 
 b,
 strong {
@@ -563,6 +552,7 @@ tbody td {
 }
 
 table {
+	background: #fff;
 	border-collapse: collapse;
 	border-spacing: 0;
 	border-width: 1px 0;
@@ -573,11 +563,14 @@ table {
 
 caption,
 figcaption {
-	caption-side: bottom;
 	color: #888;
 	font-size: .875em;
 	padding: .5em 0;
 	text-align: center;
+}
+
+caption {
+	caption-side: bottom;
 }
 
 th,
