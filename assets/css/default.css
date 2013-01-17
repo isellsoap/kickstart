@@ -366,9 +366,9 @@ var {
 }
 
 blockquote {
+	border-left: .5em solid #f5f2f0;
 	font-size: 1.125em;
-	margin-left: 2em;
-	margin-right: 2em;
+	padding-left: 1em;
 }
 
 :not(pre) > code,
