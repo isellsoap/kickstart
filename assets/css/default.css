@@ -658,8 +658,8 @@ legend {
 }
 
 /*
-** 1. WebKit browsers use “pointer” only when “size” attribute with value “0” or
-** “1” is present.
+** 1. WebKit browsers use “pointer” only when “size” attribute with value “0”
+** or “1” is present.
 **/
 
 label,
