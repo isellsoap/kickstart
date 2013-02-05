@@ -2,23 +2,23 @@
 
 /*
 ** General settings
-** ###########################################################################
+** ##############################################################################
 **/
 
 /*
-** 1. This gives you the box model you want. Trust me.
-**    @see: http://paulirish.com/2012/box-sizing-border-box-ftw/
-**/
+** 1. This gives you the box model you want.
+** @see: http://paulirish.com/2012/box-sizing-border-box-ftw/
+*/
 
 * {
 
-	/* 1 */
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+  /* 1 */
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -34,10 +34,11 @@ figure,
 footer,
 header,
 hgroup,
+main,
 nav,
 section,
 summary {
-	display: block;
+  display: block;
 }
 
 /*
@@ -47,7 +48,7 @@ summary {
 audio,
 canvas,
 video {
-	display: inline-block;
+  display: inline-block;
 }
 
 /*
@@ -56,8 +57,8 @@ video {
 **/
 
 audio:not([controls]) {
-	display: none;
-	height: 0;
+  display: none;
+  height: 0;
 }
 
 /*
@@ -65,63 +66,17 @@ audio:not([controls]) {
 **/
 
 [hidden] {
-	display: none;
+  display: none;
 }
 
 /*
-** Basic color and font settings
-** ###########################################################################
+** Various other settings
+** ##############################################################################
 **/
 
 /*
-** 1. Firefox doesn’t inherit font family specified for “select”.
-**    @see: https://github.com/nathansmith/formalize/issues/41
-** 2. Set default text color to be slightly lighter than pure black to avoid
-**    excessive contrast.
-**/
-
-html,
-button,
-input,
-select,
-
-/* 1 */
-optgroup,
-
-textarea {
-
-	/* 2 */
-	color: #333;
-
-	font: 100%/1.5 'Neue Helvetica', Helvetica, Arial, sans-serif;
-}
-
-/*
-** 1. Hyphenation works!
-**    @see: http://www.quirksmode.org/blog/archives/2012/11/hyphenation_wor.html
-** 2. Prevents iOS and IE mobile text size adjust after orientation change,
-**    without disabling user zoom.
-**    @see: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
-**/
-
-html {
-	background: #fff;
-
-	/* 1 */
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	-o-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
-
-	/* 2 */
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-
-}
-
-/*
-** Vertical rythm
+** Single-direction margin declaration for nice vertical rythm.
+** @see: http://csswizardry.com/2012/06/single-direction-margin-declarations/
 **/
 
 h1,
@@ -141,7 +96,74 @@ figure,
 table,
 form,
 fieldset {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/*
+** “caption” and “figcaption” have got exact same styling.
+**/
+
+caption,
+figcaption {
+  color: #888;
+  font-size: .875em;
+  padding: .5em 0;
+  text-align: center;
+}
+
+
+/*
+** Basic color and font settings
+** ###########################################################################
+**/
+
+/*
+** 1. Firefox doesn’t inherit font family specified for “select”.
+** @see: https://github.com/nathansmith/formalize/issues/41
+**
+** 2. Set default text color to be slightly lighter than pure black to avoid
+** excessive contrast.
+**/
+
+html,
+button,
+input,
+select,
+
+/* 1 */
+optgroup,
+
+textarea {
+
+  /* 2 */
+  color: #333;
+
+  font: 100%/1.5 'neue helvetica', helvetica, arial, sans-serif;
+}
+
+/*
+** 1. Hyphenation works!
+** @see: http://www.quirksmode.org/blog/archives/2012/11/hyphenation_wor.html
+**
+** 2. Prevents iOS and IE mobile text size adjust after orientation change,
+** without disabling user zoom.
+** @see: www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+**/
+
+html {
+  background: #fff;
+
+  /* 1 */
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -o-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
 }
 
 /*
@@ -151,8 +173,9 @@ fieldset {
 
 /*
 ** 1. @see: http://elliotjaystocks.com/blog/the-fine-flourish-of-the-ligature/
+**
 ** 2. Cross-browser kerning-pairs and ligatures. Browsers still need this.
-**    @see: http://aestheticallyloyal.com/public/optimize-legibility/
+** @see: http://aestheticallyloyal.com/public/optimize-legibility/
 **/
 
 h1,
@@ -162,43 +185,43 @@ h4,
 h5,
 h6 {
 
-	/* 1 */
-	-moz-font-feature-settings: 'kern', 'liga', 'dlig';
-	-ms-font-feature-settings: 'kern', 'liga', 'dlig';
-	-o-font-feature-settings: 'kern', 'liga', 'dlig';
-	-webkit-font-feature-settings: 'kern', 'liga', 'dlig';
-	font-feature-settings: 'kern', 'liga', 'dlig';
+  /* 1 */
+  -moz-font-feature-settings: 'kern', 'liga', 'dlig';
+  -ms-font-feature-settings: 'kern', 'liga', 'dlig';
+  -o-font-feature-settings: 'kern', 'liga', 'dlig';
+  -webkit-font-feature-settings: 'kern', 'liga', 'dlig';
+  font-feature-settings: 'kern', 'liga', 'dlig';
 
-	font-weight: 700;
-	line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.2;
 
-	/* 2 */
-	text-rendering: optimizeLegibility;
+  /* 2 */
+  text-rendering: optimizeLegibility;
 
 }
 
 h1 {
-	font-size: 3em;
+  font-size: 3em;
 }
 
 h2 {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 h3 {
-	font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 h4 {
-	font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 h5 {
-	font-size: 1.125em;
+  font-size: 1.125em;
 }
 
 h6 {
-	font-size: 1em;
+  font-size: 1em;
 }
 
 /*
@@ -207,18 +230,18 @@ h6 {
 **/
 
 a {
-	color: #bd0000;
-	cursor: pointer;
-	text-decoration: underline;
+  color: #bd0000;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 a:visited {
-	color: #85200d;
+  color: #85200d;
 }
 
 a:focus,
 a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /*
@@ -226,7 +249,7 @@ a:hover {
 **/
 
 a:focus {
-	outline: thin dotted;
+  outline: thin dotted;
 }
 
 /*
@@ -237,7 +260,7 @@ a:focus {
 
 a:active,
 a:hover {
-	outline: 0;
+  outline: 0;
 }
 
 /*
@@ -248,20 +271,20 @@ a:hover {
 ul,
 ol,
 dd {
-	margin-left: 2em;
+  margin-left: 2em;
 }
 
 ul,
 ol {
-	list-style-position: outside;
+  list-style-position: outside;
 }
 
 ul {
-	list-style-type: disc;
+  list-style-type: disc;
 }
 
 ol {
-	list-style-type: decimal;
+  list-style-type: decimal;
 }
 
 /*
@@ -273,24 +296,24 @@ ul ul,
 ul ol,
 ol ol,
 ol ul {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 ul ul {
-	list-style-type: circle;
+  list-style-type: circle;
 }
 
 ol ol {
-	list-style-type: lower-latin;
+  list-style-type: lower-latin;
 }
 
 dt {
-	font-weight: 700;
-	margin-bottom: .25em;
+  font-weight: 700;
+  margin-bottom: .25em;
 }
 
 dd {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 /*
@@ -309,11 +332,11 @@ code,
 kbd,
 q,
 var {
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	-o-hyphens: none;
-	-webkit-hyphens: none;
-	hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
 }
 
 /*
@@ -323,8 +346,8 @@ var {
 
 abbr[title],
 dfn[title] {
-	border-bottom: 1px dotted;
-	cursor: help;
+  border-bottom: 1px dotted;
+  cursor: help;
 }
 
 address,
@@ -335,12 +358,12 @@ em,
 i,
 q,
 var {
-	font-style: italic;
+  font-style: italic;
 }
 
 b,
 strong {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 blockquote,
@@ -351,13 +374,13 @@ mark,
 pre,
 samp,
 var {
-	color: #222;
+  color: #222;
 }
 
 blockquote {
-	border-left: .5em solid #f5f2f0;
-	font-size: 1.125em;
-	padding-left: 1em;
+  border-left: .5em solid #f5f2f0;
+  font-size: 1.125em;
+  padding-left: 1em;
 }
 
 :not(pre) > code,
@@ -366,13 +389,13 @@ mark,
 pre,
 samp,
 var {
-	border-radius: .25em;
-	padding: .1em .25em;
+  border-radius: .25em;
+  padding: .1em .25em;
 }
 
 /*
 ** 1. Fixes monospace font bugs in some browsers.
-**    @see: http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+** @see: http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
 **/
 
 code,
@@ -380,18 +403,18 @@ kbd,
 pre,
 samp,
 var {
-	background: #f5f2f0;
+  background: #f5f2f0;
 
-	/* 1 */
-	font: 1em Consolas, Monaco, 'Andale Mono', monospace, serif;
+  /* 1 */
+  font: 1em consolas, monaco, 'andale mono', monospace, serif;
 
-	text-shadow: 0 1px #fff;
+  text-shadow: 0 1px #fff;
 }
 
 del,
 s {
-	color: #888;
-	text-decoration: line-through;
+  color: #888;
+  text-decoration: line-through;
 }
 
 /*
@@ -400,7 +423,7 @@ s {
 
 del:hover,
 s:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /*
@@ -409,24 +432,24 @@ s:hover {
 
 div,
 div:target {
-	outline: 0;
+  outline: 0;
 }
 
 hr {
-	border: 0;
-	border-top: 1px solid #ccc;
-	display: block;
-	height: 1px;
-	margin: 2em 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+  display: block;
+  height: 1px;
+  margin: 2em 0;
 }
 
 ins,
 u {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 ins {
-	border-bottom: 1px dotted #47ad09;
+  border-bottom: 1px dotted #47ad09;
 }
 
 /*
@@ -434,24 +457,24 @@ ins {
 **/
 
 mark {
-	background: #ffa;
+  background: #ffa;
 }
 
 /*
 ** 1. Improves readability of pre-formatted text in all browsers.
-**    @see: http://toscho.de/2012/css-tab-size/
+** @see: http://toscho.de/2012/css-tab-size/
 **/
 
 pre {
-	overflow: auto;
-	padding: .75em 1em;
+  overflow: auto;
+  padding: .75em 1em;
 
-	/* 1 */
-	-moz-tab-size: 4;
-	-ms-tab-size: 4;
-	-o-tab-size: 4;
-	-webkit-tab-size: 4;
-	tab-size: 4;
+  /* 1 */
+  -moz-tab-size: 2;
+  -ms-tab-size: 2;
+  -o-tab-size: 2;
+  -webkit-tab-size: 2;
+  tab-size: 2;
 
 }
 
@@ -461,21 +484,21 @@ pre {
 **/
 
 q {
-	quotes: '»' '«' '›' '‹';
+  quotes: '»' '«' '›' '‹';
 }
 
 q::before {
-	content: open-quote;
+  content: open-quote;
 }
 
 q::after {
-	content: close-quote;
+  content: close-quote;
 }
 
 small,
 sub,
 sup {
-	font-size: .75em;
+  font-size: .75em;
 }
 
 /*
@@ -485,17 +508,17 @@ sup {
 
 sub,
 sup {
-	line-height: 0;
-	position: relative;
-	vertical-align: baseline;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sub {
-	bottom: -.25em;
+  bottom: -.25em;
 }
 
 sup {
-	top: -.5em;
+  top: -.5em;
 }
 
 /*
@@ -505,24 +528,26 @@ sup {
 
 /*
 ** 1. Removing the border prevents a border from appearing around images
-**    wrapped in links in some browsers.
+** wrapped in links in some browsers.
+**
 ** 2. Neat trick for flexible images.
-**    @see: http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries
+** @see: http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries
+**
 ** 3. Removes the gap between images and borders on image containers.
-**    @see: https://github.com/h5bp/html5-boilerplate/issues/440;
+** @see: https://github.com/h5bp/html5-boilerplate/issues/440;
 **/
 
 img {
 
-	/* 1 */
-	border: 0;
+  /* 1 */
+  border: 0;
 
-	/* 2 */
-	height: auto;
-	max-width: 100%;
+  /* 2 */
+  height: auto;
+  max-width: 100%;
 
-	/* 3 */
-	vertical-align: middle;
+  /* 3 */
+  vertical-align: middle;
 
 }
 
@@ -531,7 +556,7 @@ img {
 **/
 
 svg:not(:root) {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 /*
@@ -542,80 +567,70 @@ svg:not(:root) {
 table,
 th,
 td {
-	border-style: solid;
+  border-style: solid;
 }
 
 table,
 tbody th,
 tbody td {
-	border-color: #ccc;
+  border-color: #ccc;
 }
 
 table {
-	background: #fff;
-	border-collapse: collapse;
-	border-spacing: 0;
-	border-width: 1px 0;
-	width: 100%;
-}
-
-/* Exact same styles, no need for duplicating */
-
-caption,
-figcaption {
-	color: #888;
-	font-size: .875em;
-	padding: .5em 0;
-	text-align: center;
+  background: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-width: 1px 0;
+  width: 100%;
 }
 
 caption {
-	caption-side: bottom;
+  caption-side: bottom;
 }
 
 th,
 td {
-	padding: .5em .75em;
-	text-align: left;
-	vertical-align: top;
+  padding: .5em .75em;
+  text-align: left;
+  vertical-align: top;
 }
 
 th {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 thead th,
 tfoot th {
-	border-color: #666;
+  border-color: #666;
 }
 
 thead th {
-	border-width: 0 0 2px;
+  border-width: 0 0 2px;
 }
 
 tfoot th {
-	border-width: 2px 0 0;
+  border-width: 2px 0 0;
 }
 
 tbody th,
 tbody td {
-	border-width: 0 0 1px;
+  border-width: 0 0 1px;
 }
 
 tbody th {
-	background: #f0f0f0;
+  background: #f0f0f0;
 }
 
 tbody tr:nth-child(odd) td {
-	background: #f9f9f9;
+  background: #f9f9f9;
 }
 
 tbody tr:hover th {
-	background: #ffd8d8;
+  background: #ffd8d8;
 }
 
 tbody tr:hover td {
-	background: #ffe8e8;
+  background: #ffe8e8;
 }
 
 /*
@@ -624,27 +639,27 @@ tbody tr:hover td {
 **/
 
 fieldset {
-	border: 1px solid #ccc;
-	padding: 1em;
+  border: 1px solid #ccc;
+  padding: 1em;
 }
 
 /*
 ** 1. Corrects color not being inherited in IE 9. Without this, legend text
-**    will always be blue in IE.
+** will always be blue in IE.
 **/
 
 legend {
 
-	/* 1 */
-	border: 0;
+  /* 1 */
+  border: 0;
 
-	color: #888;
-	padding: 0 .5em;
+  color: #888;
+  padding: 0 .5em;
 }
 
 /*
-** 1. WebKit browsers use “pointer” only when “size” attribute with value 0 or
-**    1 is present.
+** 1. WebKit browsers use “pointer” only when “size” attribute with value “0” or
+** “1” is present.
 **/
 
 label,
@@ -658,11 +673,12 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 /*
 ** 1. @see: https://github.com/nathansmith/formalize/issues/43
+**
 ** 2. Firefox sets line height using “!important” in the UA style sheet.
 **/
 
@@ -674,10 +690,10 @@ select,
 input,
 button {
 
-	/* 2 */
-	line-height: normal;
+  /* 2 */
+  line-height: normal;
 
-	vertical-align: top;
+  vertical-align: top;
 }
 
 textarea,
@@ -694,15 +710,15 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-	-moz-background-clip: padding;
-	-ms-background-clip: padding-box;
-	-o-background-clip: padding-box;
-	-webkit-background-clip: padding;
-	background-clip: padding-box;
-	border: 1px solid;
-	height: 1.8em;
-	outline: 0;
-	padding: 0 .1875em;
+  -moz-background-clip: padding;
+  -ms-background-clip: padding-box;
+  -o-background-clip: padding-box;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  border: 1px solid;
+  height: 1.8em;
+  outline: 0;
+  padding: 0 .1875em;
 }
 
 textarea:focus,
@@ -719,11 +735,11 @@ button:focus,
 input[type='button']:focus,
 input[type='reset']:focus,
 input[type='submit']:focus {
-	background-color: #fff;
-	border-color: #0068c4;
-	box-shadow: #0068c4 0 0 .5em 0;
-	outline: 0;
-	z-index: 1;
+  background-color: #fff;
+  border-color: #0068c4;
+  box-shadow: #0068c4 0 0 .5em 0;
+  outline: 0;
+  z-index: 1;
 }
 
 textarea,
@@ -736,8 +752,8 @@ input[type='tel'],
 input[type='text'],
 input[type='time'],
 input[type='url'] {
-	background-color: #fff;
-	border-color: #999 #bbb #ddd;
+  background-color: #fff;
+  border-color: #999 #bbb #ddd;
 }
 
 /*
@@ -746,18 +762,18 @@ input[type='url'] {
 
 input[type='checkbox'],
 input[type='radio'] {
-	position: relative;
-	vertical-align: bottom;
+  position: relative;
+  vertical-align: bottom;
 }
 
 input[type='checkbox'] {
-	margin: 2px 1px;
-	top: -.1875em;
+  margin: 2px 1px;
+  top: -.1875em;
 }
 
 input[type='radio'] {
-	margin: 1px;
-	top: -.375em;
+  margin: 1px;
+  top: -.375em;
 }
 
 /*
@@ -766,9 +782,9 @@ input[type='radio'] {
 
 @-moz-document url-prefix() {
 
-	input[type='radio'] {
-		top: -.1875em;
-	}
+  input[type='radio'] {
+    top: -.1875em;
+  }
 
 }
 
@@ -778,9 +794,9 @@ input[type='radio'] {
 
 @media (-webkit-min-device-pixel-ratio: 0) {
 
-	input[type='radio'] {
-		top: -.25em;
-	}
+  input[type='radio'] {
+    top: -.25em;
+  }
 
 }
 
@@ -790,42 +806,42 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-	background: #ddd;
-	background-image: -moz-linear-gradient(#fff, #e5e5e5);
-	background-image: -ms-linear-gradient(#fff, #e5e5e5);
-	background-image: -o-linear-gradient(#fff, #e5e5e5);
-	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
-	background-image: linear-gradient(#fff, #e5e5e5);
-	border-color: #ddd #bbb #999;
-	display: inline-block;
-	font-weight: 700;
-	overflow: visible;
-	padding: 0 .5em;
-	text-shadow: #fff 0 1px 1px;
+  background: #ddd;
+  background-image: -moz-linear-gradient(#fff, #e5e5e5);
+  background-image: -ms-linear-gradient(#fff, #e5e5e5);
+  background-image: -o-linear-gradient(#fff, #e5e5e5);
+  background-image: -webkit-linear-gradient(#fff, #e5e5e5);
+  background-image: linear-gradient(#fff, #e5e5e5);
+  border-color: #ddd #bbb #999;
+  display: inline-block;
+  font-weight: 700;
+  overflow: visible;
+  padding: 0 .5em;
+  text-shadow: #fff 0 1px 1px;
 }
 
 button:hover,
 input[type='button']:hover,
 input[type='reset']:hover,
 input[type='submit']:hover {
-	background-image: -moz-linear-gradient(#fff, #d9d9d9);
-	background-image: -ms-linear-gradient(#fff, #d9d9d9);
-	background-image: -o-linear-gradient(#fff, #d9d9d9);
-	background-image: -webkit-linear-gradient(#fff, #d9d9d9);
-	background-image: linear-gradient(#fff, #d9d9d9);
+  background-image: -moz-linear-gradient(#fff, #d9d9d9);
+  background-image: -ms-linear-gradient(#fff, #d9d9d9);
+  background-image: -o-linear-gradient(#fff, #d9d9d9);
+  background-image: -webkit-linear-gradient(#fff, #d9d9d9);
+  background-image: linear-gradient(#fff, #d9d9d9);
 }
 
 button:active,
 input[type='button']:active,
 input[type='reset']:active,
 input[type='submit']:active {
-	background-image: -moz-linear-gradient(#d9d9d9, #fff);
-	background-image: -ms-linear-gradient(#d9d9d9, #fff);
-	background-image: -o-linear-gradient(#d9d9d9, #fff);
-	background-image: -webkit-linear-gradient(#d9d9d9, #fff);
-	background-image: linear-gradient(#d9d9d9, #fff);
-	border-color: #999 #bbb #ddd;
-	box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
+  background-image: -moz-linear-gradient(#d9d9d9, #fff);
+  background-image: -ms-linear-gradient(#d9d9d9, #fff);
+  background-image: -o-linear-gradient(#d9d9d9, #fff);
+  background-image: -webkit-linear-gradient(#d9d9d9, #fff);
+  background-image: linear-gradient(#d9d9d9, #fff);
+  border-color: #999 #bbb #ddd;
+  box-shadow: inset rgba(0, 0, 0, .25) 0 1px 2px 0;
 }
 
 /*
@@ -836,8 +852,8 @@ button::-moz-focus-inner,
 input[type='button']::-moz-focus-inner,
 input[type='reset']::-moz-focus-inner,
 input[type='submit']::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 /*
@@ -846,7 +862,7 @@ input[type='submit']::-moz-focus-inner {
 **/
 
 input[type='search'] {
-	-webkit-appearance: textfield;
+  -webkit-appearance: textfield;
 }
 
 /*
@@ -855,7 +871,7 @@ input[type='search'] {
 **/
 
 input[type='search']::-webkit-search-decoration {
-	-webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /*
@@ -864,7 +880,7 @@ input[type='search']::-webkit-search-decoration {
 
 button[disabled],
 input[disabled] {
-	cursor: default;
+  cursor: default;
 }
 
 /*
@@ -875,20 +891,20 @@ input[disabled] {
 **/
 
 textarea {
-	min-height: 5em;
+  min-height: 5em;
 
-	/* 1 */
-	overflow: auto;
+  /* 1 */
+  overflow: auto;
 
-	/* 2 */
-	resize: vertical;
+  /* 2 */
+  resize: vertical;
 
-	width: 100%;
+  width: 100%;
 }
 
 select[multiple],
 select[size] {
-	height: auto;
+  height: auto;
 }
 
 /* https://github.com/nathansmith/formalize/issues/42 */
@@ -896,9 +912,9 @@ select[size] {
 
 select[size='0'],
 select[size='1'] {
-	height: 1.8em;
-	/* 1 */
-	padding: 0;
+  height: 1.8em;
+  /* 1 */
+  padding: 0;
 }
 
 /*
@@ -907,12 +923,12 @@ select[size='1'] {
 **/
 
 optgroup {
-	font-style: normal;
-	font-weight: 700;
+  font-style: normal;
+  font-weight: 700;
 }
 
 option {
-	padding-left: 1em;
+  padding-left: 1em;
 }
 
 /*
@@ -926,12 +942,12 @@ option {
 
 .cf::before,
 .cf::after {
-	content: ' ';
-	display: table;
+  content: ' ';
+  display: table;
 }
 
 .cf::after {
-	clear: both;
+  clear: both;
 }
 
 /*
@@ -939,14 +955,14 @@ option {
 **/
 
 .ir {
-	background-color: transparent;
-	border: 0;
-	overflow: hidden;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
 }
 
 .ir::before {
-	content: '';
-	display: block;
-	width: 0;
-	height: 150%;
+  content: '';
+  display: block;
+  width: 0;
+  height: 150%;
 }
