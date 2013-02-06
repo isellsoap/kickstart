@@ -90,6 +90,7 @@ ol,
 dl,
 address,
 blockquote,
+hr,
 p,
 pre,
 figure,
@@ -436,11 +437,9 @@ div:target {
 }
 
 hr {
-  border: 0;
-  border-top: 1px solid #ccc;
-  display: block;
-  height: 1px;
-  margin: 2em 0;
+  border: solid #ccc;
+  border-width: 1px 0 0;
+  height: 0;
 }
 
 ins,
